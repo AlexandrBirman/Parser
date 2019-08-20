@@ -2,10 +2,9 @@ package parse.scrupers.standart;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import parse.scrupers.BaseScruper;
-import parse.scrupers.ScruperEvent;
+import parse.scrupers.Event;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,9 +15,9 @@ public class ITeventsScraperStandart extends BaseScruper {
     private  static String url = "https://it-events.com/";
 
     @Override
-    protected List<ScruperEvent> getReferences(String content) throws IOException {
+    protected List<Event> getReferences(String content) throws IOException {
 
-        List<ScruperEvent> data = new ArrayList<>();
+        List<Event> data = new ArrayList<>();
         StringBuilder builder = new StringBuilder();
 
         Document document = Jsoup.connect(url).get();
@@ -26,7 +25,7 @@ public class ITeventsScraperStandart extends BaseScruper {
         Elements links = elements.select("a[href]"); // в этом месте создается два элемента одной ссылки
         for (int i = 0; i < elements.size(); i += 1) {
             //builder.setLength(0);
-            event = new ScruperEvent();
+            event = new Event();
 
             //builder.append(elements.get(i).select("a[href]").attr("abs:href") + "\n");
             event.setUrl(elements.get(i).select("a[href]").attr("abs:href"));
@@ -48,7 +47,7 @@ public class ITeventsScraperStandart extends BaseScruper {
     }
 
     @Override
-    public List<ScruperEvent> getData() throws IOException {
+    public List<Event> getData() throws IOException {
         return getReferences(null);
     }
 

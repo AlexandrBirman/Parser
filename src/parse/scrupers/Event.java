@@ -1,6 +1,6 @@
 package parse.scrupers;
 
-public class ScruperEvent {
+public class Event {
     private String date;
     private String url;
     private String name;
@@ -65,11 +65,11 @@ public class ScruperEvent {
         this.category = category;
     }
 
-    public ScruperEvent(String url) {
+    public Event(String url) {
         this.url = url;
     }
 
-    public ScruperEvent() {
+    public Event() {
     }
 
     @Override

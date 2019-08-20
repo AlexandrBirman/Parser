@@ -15,7 +15,7 @@ import java.util.List;
 public abstract class BaseScruper {
 
     protected static StringBuilder builder;
-    protected static ScruperEvent event;
+    protected static Event event;
 
     public BaseScruper() {
         builder = new StringBuilder();
@@ -45,8 +45,8 @@ public abstract class BaseScruper {
         return response.toString();
     }
 
-    protected List<ScruperEvent> getFromHTML(String url, String tag) throws IOException {
-        List<ScruperEvent> data = new ArrayList<>();
+    protected List<Event> getFromHTML(String url, String tag) throws IOException {
+        List<Event> data = new ArrayList<>();
 
         Document document = Jsoup.connect(url)
                 .userAgent("Chrome/4.0.249.0 Safari/532.5")
@@ -60,15 +60,15 @@ public abstract class BaseScruper {
         for (int i = 0; i < elements.size(); i++) {
             //System.out.println((links.get(i).attr("abs:href")));
 
-            data.add(new ScruperEvent((links.get(i).attr("abs:href"))));
+            data.add(new Event((links.get(i).attr("abs:href"))));
 
         }
 
         return data;
     }
 
-    protected abstract List<ScruperEvent> getReferences(String content) throws IOException;
+    protected abstract List<Event> getReferences(String content) throws IOException;
 
-    public abstract List<ScruperEvent> getData() throws IOException;
+    public abstract List<Event> getData() throws IOException;
 
 }

@@ -2,9 +2,8 @@ package parse.scrupers.fromAPI;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.jsoup.helper.StringUtil;
 import parse.scrupers.BaseScruper;
-import parse.scrupers.ScruperEvent;
+import parse.scrupers.Event;
 import util.StringsUtil;
 
 import java.io.IOException;
@@ -16,13 +15,13 @@ public class HhScraperFromAPI extends BaseScruper {
     private static String url = "https://api.hh.ru/vacancies?employment=probation";
 
     @Override
-    public List<ScruperEvent> getData() throws IOException {
+    public List<Event> getData() throws IOException {
         return getReferences(getJsonString(url));
     }
 
     @Override
-    public List<ScruperEvent> getReferences(String content) throws IOException {
-        List<ScruperEvent> response = new ArrayList<>();
+    public List<Event> getReferences(String content) throws IOException {
+        List<Event> response = new ArrayList<>();
 
         JsonNode arrNode = new ObjectMapper().readTree(content).get("items");
         StringBuilder builder = new StringBuilder();
@@ -30,7 +29,7 @@ public class HhScraperFromAPI extends BaseScruper {
         if (arrNode.isArray()) {
             for (final JsonNode objNode : arrNode) {
                 //builder.setLength(0);
-                event = new ScruperEvent();
+                event = new Event();
 
                 //builder.append(StringsUtil.deleteCommos(objNode.get("alternate_url").toString()) + "\n");
                 event.setUrl(StringsUtil.deleteCommos(objNode.get("alternate_url").toString()));

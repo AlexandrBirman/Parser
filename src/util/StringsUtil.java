@@ -13,4 +13,17 @@ public class StringsUtil{
         }
         return string;
     }
+
+    public static String deleteApostrophe(String string){
+
+        try {
+            if (string.contains("'")){
+                char old = 27;
+                return string.replaceAll("'", " ");
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return string;
+    }
 }

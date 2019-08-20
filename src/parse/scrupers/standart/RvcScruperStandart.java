@@ -2,10 +2,9 @@ package parse.scrupers.standart;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import parse.scrupers.BaseScruper;
-import parse.scrupers.ScruperEvent;
+import parse.scrupers.Event;
 
 import java.io.IOException;
 import java.util.List;
@@ -31,12 +30,12 @@ public class RvcScruperStandart extends BaseScruper {
 
 
     @Override
-    protected List<ScruperEvent> getReferences(String content) {
+    protected List<Event> getReferences(String content) {
         return null;
     }
 
     @Override
-    public List<ScruperEvent> getData() {
+    public List<Event> getData() {
         return null;
     }
 }
