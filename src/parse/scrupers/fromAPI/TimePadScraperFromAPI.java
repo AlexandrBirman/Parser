@@ -33,10 +33,8 @@ public class TimePadScraperFromAPI extends BaseScruper {
             for (final JsonNode objNode : arrNode) {
                 builder.setLength(0);
                 event = new Event();
-                //builder.append(StringsUtil.deleteCommos(objNode.get("url").toString()) + "\n");
                 //builder.append(objNode.get("categories").get("name").toString() + "\n");
                 event.setUrl(StringsUtil.deleteApostrophe(StringsUtil.deleteCommos(objNode.get("url").toString())));
-                //builder.append(StringsUtil.deleteCommos(objNode.get("name").toString()) + "\n");
                 event.setName(StringsUtil.deleteApostrophe(StringsUtil.deleteCommos(objNode.get("name").toString())));
                 //builder.append(objNode.get("area").get("name").toString());
                 response.add(event);

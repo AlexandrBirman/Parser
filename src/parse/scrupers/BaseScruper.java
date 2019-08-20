@@ -60,7 +60,7 @@ public abstract class BaseScruper {
         for (int i = 0; i < elements.size(); i++) {
             //System.out.println((links.get(i).attr("abs:href")));
 
-            data.add(new Event((links.get(i).attr("abs:href"))));
+            data.add(new Event(elements.select("a[href]").get(i).attr("abs:href")));
 
         }
 
