@@ -9,7 +9,6 @@ import parse.scrupers.ScruperEvent;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-// пока выдает только ссылки, причем некоторые дублирует
 public class TcehScraperStandart extends BaseScruper {
     private static String url = "https://tceh.com/events/";
 

@@ -9,7 +9,6 @@ import parse.scrupers.ScruperEvent;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-// только ссылки
 public class RunetIdScruperStandart extends BaseScruper {
     private static String url = "https://runet-id.com/events/";
 

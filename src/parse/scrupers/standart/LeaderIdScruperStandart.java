@@ -9,7 +9,6 @@ import parse.scrupers.ScruperEvent;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-// трижды дублирует ссылки
 public class LeaderIdScruperStandart extends BaseScruper {
     private static String url = "https://leader-id.ru/events/";
 

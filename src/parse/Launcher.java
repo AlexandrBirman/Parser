@@ -61,14 +61,14 @@ public class Launcher extends TimerTask{
         //storage.add(new HhScraperFromAPI()); // стажировки | достает ссылку + название + город
         //storage.add(new TimePadScraperFromAPI()); // мероприятия по теме | Бизнес | IT и интернет |  название мероприятия
         //storage.add(new ITeventsScraperStandart()); //  ссылка + область + название мероприятия | (дата + город вместе)
-        //storage.add(new TaglineEventsScruperStandart()); // ссылка + название + дата + город + цена(если есть)
+        storage.add(new TaglineEventsScruperStandart()); // ссылка + название + дата + город + цена(если есть)
         //storage.add(new EventsYandexScruperStandart()); // ссылка + название + дата (достает только активные мероприятия на которые открыта регистрация)
         //storage.add(new SkScruperStandart()); //работает неправильно, пока не знаю как исправить
         //storage.add(new LeaderIdScruperStandart()); // работает неправильно, пока не знаю как исправить
         //storage.add(new IngariaStartupScraperStandart()); // ссылка + название + дата
         //storage.add(new TcehScraperStandart()); // ссылка + название + дата + категория
         //storage.add(new DigitalLoctoberScruperStandart()); //ссылка + название + дата + категория + формат
-        storage.add(new RunetIdScruperStandart()); //ссылка + название + дата + город
+        //storage.add(new RunetIdScruperStandart()); //ссылка + название + дата + город
         //storage.add(new HackatonIoScruperStandart());
         //storage.add(new NetologyScruperStandart()); //не доделан
         //storage.add(new MskItStepScruperStandart());

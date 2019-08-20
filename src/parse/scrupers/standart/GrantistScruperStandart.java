@@ -5,7 +5,6 @@ import parse.scrupers.ScruperEvent;
 
 import java.io.IOException;
 import java.util.List;
-// не работает
 public class GrantistScruperStandart extends BaseScruper {
     private static String url = "http://grantist.com/page/126/";
 

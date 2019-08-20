@@ -5,7 +5,6 @@ import parse.scrupers.ScruperEvent;
 
 import java.io.IOException;
 import java.util.List;
-// выгружает меньше ссылок чме надо
 public class MskItStepScruperStandart extends BaseScruper {
     private static String url = "https://msk.itstep.org/events";
 
